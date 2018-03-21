@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core'
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   password: string;
 
 
-  tryLog(username : string, password, string){
-    
+  tryLog(){
+    this.loginService.login(this.username, this.password);
   }
 }

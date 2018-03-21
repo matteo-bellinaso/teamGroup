@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { EditComponent } from './components/edit/edit.component';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
+import { cRouterModule } from './router/router.module';
+import { UserListService } from './services/user.list.service';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { LoginService } from './services/login.service';
     ListComponent,
     LoginComponent,
     PageNotFoundComponent,
-    EditComponent
+    EditComponent,
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, 
+    FormsModule,
+    cRouterModule
   ],
-  providers: [ LoginService],
+  providers: [LoginService,UserListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
