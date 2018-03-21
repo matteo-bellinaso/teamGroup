@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { EditComponent } from './components/edit/edit.component';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
+import { ListVideogameService } from './services/list-videogame.service';
+import { ListGeneresService } from './services/list-generes.service';
 import { cRouterModule } from './router/router.module';
 import { UserListService } from './services/user.list.service';
 
@@ -32,7 +34,9 @@ import { UserListService } from './services/user.list.service';
     FormsModule,
     cRouterModule
   ],
-  providers: [LoginService,UserListService],
-  bootstrap: [AppComponent]
+  providers: [LoginService,UserListService,  
+  ListGeneresService,ListVideogameService],
+   
+   bootstrap: [AppComponent]
 })
 export class AppModule { }

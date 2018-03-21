@@ -5,13 +5,17 @@ import { ListComponent } from '../components/list/list.component';
 import { DetailComponent } from '../components/detail/detail.component';
 import { EditComponent } from '../components/edit/edit.component';
 import { LoginComponent } from '../components/login/login.component';
+import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "list", component: ListComponent},
-  {path: "detail", component: DetailComponent},
+  {path: "detail/:id", component: DetailComponent},
   {path: "edit", component: EditComponent},
-  {path: "login", component: LoginComponent}
+  {path: "edit/:id", component: EditComponent},
+  {path: "login", component: LoginComponent},
+  { path: "", redirectTo: "/login", pathMatch: "full" },//all'inizio accederà ad home
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
