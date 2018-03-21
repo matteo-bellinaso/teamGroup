@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   videoGames: VideoGame[];
   generes: Genere[];
   value: string = "Tutti";
-  constructor(private listVideogame: ListVideogameService, private genereListService: ListGeneresService) {
+  constructor(private listVideogame: ListVideogameService, private genereListService: ListGeneresService,private router: Router) {
 
   }
 
@@ -24,9 +24,9 @@ export class ListComponent implements OnInit {
     this.generes = this.genereListService.getGeneresList();
   }
 
-  // goToEdit(game: VideoGame) {
-  //   this.router.navigate(['/detail/' + game.$id]); //setta l'id quando si va nella pagina detail
-  // }
+  goToEdit(game: VideoGame) {
+    this.router.navigate(['/detail/' + game.$id]); //setta l'id quando si va nella pagina detail
+  }
 
 
 
