@@ -13,6 +13,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { FormsModule } from '@angular/forms';
 import { ListVideogameService } from './services/list-videogame.service';
 import { ListGeneresService } from './services/list-generes.service';
+import { cRouterModule } from './router/router.module';
 
 
 @NgModule({
@@ -24,11 +25,12 @@ import { ListGeneresService } from './services/list-generes.service';
     ListComponent,
     LoginComponent,
     PageNotFoundComponent,
-    EditComponent
+    EditComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    cRouterModule
   ],
   providers: [ListVideogameService,ListGeneresService],
   bootstrap: [AppComponent]
