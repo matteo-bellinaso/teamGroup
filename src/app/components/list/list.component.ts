@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
   }
 
   goToEdit(game: VideoGame) {
-    this.router.navigate(['/detail/' + game.$id]); //setta l'id quando si va nella pagina detail
+    this.router.navigate(['/app-detail/' + game.$id]); //setta l'id quando si va nella pagina detail
   }
 
 

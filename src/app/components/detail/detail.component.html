@@ -1,3 +1,15 @@
-<p>
-  detail works!
-</p>
+<div class="detail" *ngIf="game">
+
+    <div class="text">{{game.title}}</div>
+    <img class="img_detal" src="{{game.imgUrl}}">
+    <div class="text">{{game.genere.description}}</div>
+    <div class="text">{{game.price}}</div>
+    <div class="text">{{game.title}}</div>
+    <div class="text">{{game.data | date: 'dd/MM/yyyy'}}</div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos recusandae temporibus voluptas ipsum vel totam repellat eligendi eaque atque tenetur!
+    </p>
+
+
+    <div class="button" *ngIf="" (click)="goToEdit(game)">Edit
+    </div>
+</div>
