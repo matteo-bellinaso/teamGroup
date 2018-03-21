@@ -8,11 +8,11 @@ import { LoginComponent } from '../components/login/login.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
-  {path: "list", component: ListComponent},
-  {path: "detail/:id", component: DetailComponent},
-  {path: "edit", component: EditComponent},
-  {path: "edit/:id", component: EditComponent},
+  {path: "app-home", component: HomeComponent},
+  {path: "app-list", component: ListComponent},
+  {path: "app-detail/:id", component: DetailComponent},
+  {path: "app-edit", component: EditComponent},
+  {path: "app-edit/:id", component: EditComponent},
   {path: "login", component: LoginComponent},
   { path: "", redirectTo: "/login", pathMatch: "full" },//all'inizio accederà ad home
   { path: "**", component: PageNotFoundComponent }
