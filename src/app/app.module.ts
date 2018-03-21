@@ -10,6 +10,9 @@ import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { EditComponent } from './components/edit/edit.component';
+import { FormsModule } from '@angular/forms';
+import { ListVideogameService } from './services/list-videogame.service';
+import { ListGeneresService } from './services/list-generes.service';
 
 
 @NgModule({
@@ -24,9 +27,10 @@ import { EditComponent } from './components/edit/edit.component';
     EditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ListVideogameService,ListGeneresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

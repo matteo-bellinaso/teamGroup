@@ -1,3 +1,14 @@
-<p>
-  list works!
-</p>
+<select [(ngModel)]="value">
+        <option>Tutti</option>
+        <ng-container *ngFor="let genere of generes">
+            <option>{{genereListService.getDescriptionById(genere?.id)}}</option>
+        </ng-container>
+</select>
+<ng-container *ngFor="let game of videoGames">
+    <div *ngIf="value=='Tutti' || game.genere.description == value" (click)="goToEdit(game)">
+        <div class="infoGame">
+            <div><img src="{{game?.imgUrl}}"></div>
+            <div>{{game?.title}} - {{game?.price | currency: 'EUR'}}</div>
+        </div>
+    </div>
+</ng-container>
