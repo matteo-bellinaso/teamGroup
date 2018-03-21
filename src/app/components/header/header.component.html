@@ -2,19 +2,17 @@
     <nav>
         <ul class="right">
             <li>
-                <a routerLink="/home">HOME</a>
+                <a routerLink="/app-home">HOME</a>
             </li>
             <li>
-                <a routerLink="/list">LIST</a>
+                <a routerLink="/app-list">LIST</a>
+            </li>
+
+            <li *ngIf="isAdmin">
+                <a routerLink="/app-edit">EDIT</a>
             </li>
             <li>
-                <a routerLink="/detail">DETAIL</a>
-            </li>
-            <li>
-                <a routerLink="/edit">EDIT</a>
-            </li>
-            <li>
-                <a>LOGOUT</a>
+                <a (click)="logout()">LOGOUT</a>
             </li>
         </ul>
     </nav>

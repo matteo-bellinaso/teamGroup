@@ -6,13 +6,14 @@ import { DetailComponent } from '../components/detail/detail.component';
 import { EditComponent } from '../components/edit/edit.component';
 import { LoginComponent } from '../components/login/login.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { AuthguardService } from '../services/authguard.service';
 
 const routes: Routes = [
-  {path: "app-home", component: HomeComponent},
-  {path: "app-list", component: ListComponent},
-  {path: "app-detail/:id", component: DetailComponent},
-  {path: "app-edit", component: EditComponent},
-  {path: "app-edit/:id", component: EditComponent},
+  {path: "app-home", component: HomeComponent,canActivate: [AuthguardService]},
+  {path: "app-list", component: ListComponent, canActivate: [AuthguardService]},
+  {path: "app-detail/:id", component: DetailComponent, canActivate: [AuthguardService]},
+  {path: "app-edit", component: EditComponent,canActivate: [AuthguardService]},
+  {path: "app-edit/:id", component: EditComponent,canActivate: [AuthguardService]},
   {path: "login", component: LoginComponent},
   { path: "", redirectTo: "/login", pathMatch: "full" },//all'inizio accederà ad home
   { path: "**", component: PageNotFoundComponent }
