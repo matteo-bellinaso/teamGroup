@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  
+logged : boolean = false;
+
+constructor(private loginService : LoginService){
+
+  this.loginService.logged$.subscribe(logged =>{
+    this.logged = logged;
+  } )
+
+}
+
 }
