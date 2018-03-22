@@ -7,14 +7,16 @@ import { EditComponent } from '../components/edit/edit.component';
 import { LoginComponent } from '../components/login/login.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { AuthguardService } from '../services/authguard.service';
+import { AuthguardLoginService } from '../services/login-authguard.service';
+import { CanDeactivateEditService } from '../services/can-deactivate-edit.service';
 
 const routes: Routes = [
-  {path: "app-home", component: HomeComponent,canActivate: [AuthguardService]},
-  {path: "app-list", component: ListComponent, canActivate: [AuthguardService]},
-  {path: "app-detail/:id", component: DetailComponent, canActivate: [AuthguardService]},
-  {path: "app-edit", component: EditComponent,canActivate: [AuthguardService]},
-  {path: "app-edit/:id", component: EditComponent,canActivate: [AuthguardService]},
-  {path: "login", component: LoginComponent},
+  { path: "app-home", component: HomeComponent, canActivate: [AuthguardService] },
+  { path: "app-list", component: ListComponent, canActivate: [AuthguardService] },
+  { path: "app-detail/:id", component: DetailComponent, canActivate: [AuthguardService] },
+  { path: "app-edit", component: EditComponent, canActivate: [AuthguardService], canDeactivate: [CanDeactivateEditService] },
+  { path: "app-edit/:id", component: EditComponent, canActivate: [AuthguardService], canDeactivate: [CanDeactivateEditService] },
+  { path: "login", component: LoginComponent, canActivate: [AuthguardLoginService] },
   { path: "", redirectTo: "/login", pathMatch: "full" },//all'inizio accederà ad home
   { path: "**", component: PageNotFoundComponent }
 ];

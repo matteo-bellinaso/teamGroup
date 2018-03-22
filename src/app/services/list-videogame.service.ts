@@ -44,10 +44,11 @@ export class ListVideogameService {
 
     isChanged(game: VideoGame): boolean {
         let id = game.$id;
-        if (this.isEquivalent(game, this.getGameById(id))) {
-            return false;
-        } else {
+        let game2 = this.getGameById(id);
+        if (!this.isEquivalent(game, game2)) {
             return true;
+        } else {
+            return false;
         }
 
     }
@@ -68,9 +69,16 @@ export class ListVideogameService {
 
             // If values of same property are not equal,
             // objects are not equivalent
-            if (a[propName] !== b[propName]) {
-                return false;
+            if (propName != "data") {
+                if (a[propName] !== b[propName]) {
+                    return false;
+                }
+            } else {
+                if (a[propName].getTime() !== b[propName].getTime()) {
+                    return false;
+                }
             }
+
         }
 
         // If we made it this far, objects
@@ -79,17 +87,21 @@ export class ListVideogameService {
     }
 
     search(cercato: string): VideoGame {
-
+        let trovato: boolean = false;
+        let currentGame;
         for (let game of this.games) {
             if (game.$title.toLowerCase() === cercato.toLocaleLowerCase()) {
-                let trovato = true;
-                let currentGame = this.getGameById(game.$id);
 
-                return currentGame;
+                currentGame = this.getGameById(game.$id);
+                trovato = true;
+                break;
             }
         }
-        return null;
-
+        if (trovato) {
+            return currentGame;
+        } else {
+            return null;
+        }
 
     }
 
