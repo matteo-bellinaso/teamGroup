@@ -1,3 +1,39 @@
-<p>
-  edit works!
-</p>
+<div>
+    <input type="text" [(ngModel)]="searchBar"><button (click)="search()">Cerca</button>
+
+</div>
+<div *ngIf="trovato">
+
+    <form (ngSubmit)="edit()" [formGroup]="editForm">
+
+        <label>Titolo</label>
+        <input type="text" formControlName="title">
+
+        <label>Prezzo</label>
+        <input type="number" formControlName="price">
+
+
+        <label>Genere</label>
+        <select formControlName="genere">
+           <option *ngFor="let genere of generes">{{genere.description}}</option>
+      </select>
+
+
+        <label>Data</label>
+        <input type="date" formControlName="data">
+
+
+        <label>Rating</label>
+        <input type="number" formControlName="rating">
+
+
+        <button type="submit" [disabled]="editForm.status== 'INVALID'">Modifica</button>
+        <button type="button" (click)="resetForm()">Azzera</button>
+    </form>
+
+
+
+</div>
+<div *ngIf="errore">
+    hai sbagliato a cercare
+</div>
