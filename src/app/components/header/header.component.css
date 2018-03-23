@@ -11,23 +11,22 @@ li {
 }
 
 #navbar {
-    height: 70px;
+    height: 60px;
     background-color: orange;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 0 15px;
 }
 
 #navbar a {
-    padding: 16px;
+    padding: 30px;
     color: #fff;
-    font-size: 20px;
-    line-height: 35px;
-    margin-right: 20px;
+    font-size: 16px;
+    line-height: 30px;
 }
 
 #navbar a:hover {
-    opacity: 0.85;
-    background-color: #ca8300;
+    color: #d8d8d8;
 }
 
 .right {
@@ -40,20 +39,22 @@ li {
 }
 
 .logo img {
-    margin-top: 10px;
+    margin-top: 5px;
     height: 50px;
     margin-left: 20px;
     float: left;
 }
 
 .user {
-    line-height: 70px;
-    font-size: 20px;
+    line-height: 60px;
+    font-size: 18px;
     margin-left: 80px;
 }
 
 #navbar .seleted {
-    color: rgb(255, 81, 0);
-    border-radius: 5px;
-    text-decoration-line: underline;
+    background-color: #be7d03;
+}
+
+#navbar .seleted:hover {
+    color: #fff;
 }
