@@ -11,13 +11,18 @@ li {
 }
 
 #navbar {
-    height: 50px;
+    height: 70px;
     background-color: orange;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #navbar a {
-    padding: 20px;
+    padding: 10px;
     color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    margin-right: 20px;
 }
 
 #navbar a:hover {
@@ -28,8 +33,26 @@ li {
     float: right;
 }
 
+.logo {
+    width: 50%;
+    display: inline-block;
+}
+
 .logo img {
+    margin-top: 10px;
     height: 50px;
     margin-left: 20px;
     float: left;
+}
+
+.user {
+    line-height: 70px;
+    font-size: 20px;
+    margin-left: 80px;
+}
+
+#navbar .seleted {
+    color: rgb(255, 81, 0);
+    border-radius: 5px;
+    text-decoration-line: underline;
 }

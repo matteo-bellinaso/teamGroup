@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -6,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  user :string;
-  constructor() { }
-
-  ngOnInit() {
- this.user = sessionStorage.getItem("username")
-
+  isAdmin: boolean = false;
+  user: string;
+  constructor( private loginService : LoginService) { 
+    if (loginService.isAdmin()) {
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
   }
 
-
-
+  logout() {
+    this.loginService.logout();
+    this.loginService.setLogged(false);
+  }
+  ngOnInit() {
+    this.user = sessionStorage.getItem("username");
+  }
 }

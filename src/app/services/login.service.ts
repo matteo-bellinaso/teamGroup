@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { UserListService } from './user.list.service';
 import { User } from '../class/user';
@@ -8,7 +8,9 @@ import { Routes, Router } from '@angular/router';
 export class LoginService {
 
   utente: User;
-  constructor(private userListService: UserListService, private route : Router) { }
+  constructor(private userListService: UserListService, private route: Router) {
+
+  }
 
   private logged: Subject<boolean> = new Subject<boolean>();
   public logged$ = this.logged.asObservable();
@@ -17,10 +19,12 @@ export class LoginService {
     this.logged.next(value);
   }
 
-  isLogged(){
-    if(sessionStorage.getItem('username') != null){
+  isLogged() {
+    if (sessionStorage.getItem('username') != null) {
+      this.setLogged(true);
       return true;
-    }else{
+    } else {
+      this.setLogged(false);
       return false;
     }
   }
@@ -30,22 +34,28 @@ export class LoginService {
 
       this.utente = this.userListService.getUserByUsername(username, password);
 
-      sessionStorage.setItem("username" ,this.utente.username);
+      sessionStorage.setItem("username", this.utente.username);
       this.setLogged(true);
 
-      this.route.navigate(['/home']);
+      this.route.navigate(['/app-home']);
 
-    }else{
+    } else {
       alert("username or password sbagliata");
     }
   }
 
-isAdmin(){
-  if(sessionStorage.getItem('username') === 'admin'){
-    return true;
-  }else{
-    return false;
+  isAdmin() {
+    if (sessionStorage.getItem('username') === 'admin') {
+      return true;
+    } else {
+      return false;
+    }
   }
-}
+
+  logout() {
+    sessionStorage.removeItem('username');
+    this.route.navigate(["/login"]);
+
+  }
 
 }

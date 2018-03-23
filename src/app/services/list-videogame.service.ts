@@ -49,7 +49,6 @@ export class ListVideogameService {
         } else {
             return true;
         }
-
     }
 
     isEquivalent(a, b) {
@@ -78,20 +77,14 @@ export class ListVideogameService {
         return true;
     }
 
-    search(cercato: string): VideoGame {
-
-        for (let game of this.games) {
-            if (game.$title.toLowerCase() === cercato.toLocaleLowerCase()) {
-                let trovato = true;
-                let currentGame = this.getGameById(game.$id);
-
-                return currentGame;
+      search(search: string){
+         let searchedGames : VideoGame[] = [];
+        for(let item of this.games){
+            if(item.$title.toLowerCase().match(search.toLowerCase())){     
+              searchedGames.push(item);
             }
-        }
-        return null;
-
-
-    }
-
+          }
+          return searchedGames;
+      }
 
 }
