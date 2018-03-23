@@ -44,12 +44,12 @@ export class ListVideogameService {
 
     isChanged(game: VideoGame): boolean {
         let id = game.$id;
-        if (this.isEquivalent(game, this.getGameById(id))) {
-            return false;
-        } else {
+        let game2 = this.getGameById(id);
+        if (!this.isEquivalent(game, game2)) {
             return true;
+        } else {
+            return false;
         }
-
     }
 
     isEquivalent(a, b) {
@@ -68,9 +68,16 @@ export class ListVideogameService {
 
             // If values of same property are not equal,
             // objects are not equivalent
-            if (a[propName] !== b[propName]) {
-                return false;
+            if (propName != "data") {
+                if (a[propName] !== b[propName]) {
+                    return false;
+                }
+            } else {
+                if (a[propName].getTime() !== b[propName].getTime()) {
+                    return false;
+                }
             }
+
         }
 
         // If we made it this far, objects
@@ -78,20 +85,23 @@ export class ListVideogameService {
         return true;
     }
 
-    search(cercato: string): VideoGame {
-
-        for (let game of this.games) {
-            if (game.$title.toLowerCase() === cercato.toLocaleLowerCase()) {
-                let trovato = true;
-                let currentGame = this.getGameById(game.$id);
-
-                return currentGame;
+      search(search: string){
+         let searchedGames : VideoGame[] = [];
+        for(let item of this.games){
+            if(item.$title.toLowerCase().match(search.toLowerCase())){     
+              searchedGames.push(item);
             }
-        }
-        return null;
-
-
-    }
-
+          }
+          return searchedGames;
+      }
+      searchForEdit(search: string){
+        let searchedGames : VideoGame;
+       for(let item of this.games){
+           if(item.$title.toLowerCase().match(search.toLowerCase())){     
+             return item;
+           }
+         }
+         return null;
+     }
 
 }

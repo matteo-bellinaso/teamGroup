@@ -1,0 +1,23 @@
+.ricera {
+    text-align: center;
+    width: 40%;
+}
+
+.barraRicerca {
+    font-size: 20px;
+}
+
+.buttonRicerca {
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.generi {
+    font-size: 20px;
+}
+
+.cercatoGame {
+    background-color: tomato;
+}

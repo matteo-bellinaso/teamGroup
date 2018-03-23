@@ -15,6 +15,8 @@ export class ListComponent implements OnInit {
   videoGames: VideoGame[];
   generes: Genere[];
   value: string = "Tutti";
+  search: string;
+  searchedGame : VideoGame[];
   constructor(private listVideogame: ListVideogameService, private genereListService: ListGeneresService,private router: Router) {
 
   }
@@ -25,9 +27,27 @@ export class ListComponent implements OnInit {
   }
 
   goToEdit(game: VideoGame) {
-    this.router.navigate(['/detail/' + game.$id]); //setta l'id quando si va nella pagina detail
+    this.router.navigate(['/app-detail/' + game.$id]); //setta l'id quando si va nella pagina detail
   }
 
+
+back(){
+  this.value ="Tutti";
+  this.searchedGame = null;
+}
+
+searchDelete(event : any){
+  if(this.search == ''){
+    this.value = "Tutti"
+  } else{
+    this.value = "nessuno";
+    this.searchedGame =  this.listVideogame.search(this.search);
+  
+  }
+}
+clean(event: any){
+  this.searchedGame = [];
+}
 
 
 }

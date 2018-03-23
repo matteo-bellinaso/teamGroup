@@ -1,0 +1,28 @@
+.detail {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 70px;
+    background-color: orange;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.detail img {
+    width: 40%;
+}
+
+.text {
+    margin-top: 3px;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.button {
+    margin-top: 15px;
+    width: 20%;
+    margin-left: 35%;
+    padding: 15px;
+    background-color: rgb(194, 102, 16);
+    border-radius: 5px;
+}
