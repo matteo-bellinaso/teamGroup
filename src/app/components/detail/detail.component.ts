@@ -24,6 +24,9 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(sessionStorage.getItem("username") == "admin"){
+      this.admin = true
+    }
   }
 
   goToEdit(game: VideoGame) {

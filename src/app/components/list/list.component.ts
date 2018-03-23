@@ -39,6 +39,7 @@ back(){
 searchDelete(event : any){
   if(this.search == ''){
     this.value = "Tutti"
+    this.searchedGame = [];
   } else{
     this.value = "nessuno";
     this.searchedGame =  this.listVideogame.search(this.search);

@@ -14,7 +14,7 @@ export class UserListService {
     new User("topolino", "topolino",  false, 'fr@rgegre.it', 'carletto', 'baretto', new Date('09/06/1991'), "borgonovo", true)
   ];
 
-  checkUserProfile(username : string, pass : string){ //controlla mail o username
+  checkUserProfile(username : string, pass : string){ 
    let indice : number = 0;
     for(let user of this.users){
       if(username == user.username || username== user.email){
@@ -29,8 +29,10 @@ getUserProfile( pass : string, indice : number){
   let user = this.users[indice];
     if( pass == user.password){
       return user;
+    }else{
+      alert("user or passoword wrong");
+      return null;
     }
-  return null;
 }
 
 
