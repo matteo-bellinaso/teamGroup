@@ -17,6 +17,9 @@
             <li *ngIf="isAdmin">
                 <a routerLink="/app-edit" routerLinkActive="seleted">EDIT</a>
             </li>
+            <li *ngIf="!isAdmin">
+                <a routerLink="/app-edit-utente/{{user}}" routerLinkActive="seleted">UTENTE</a>
+            </li>
             <li>
                 <a (click)="logout()" routerLinkActive="seleted">LOGOUT</a>
             </li>

@@ -9,7 +9,7 @@ import { LoginService } from '../../services/login.service';
 export class HeaderComponent implements OnInit {
   isAdmin: boolean = false;
   user: string;
-  constructor( private loginService : LoginService) { 
+  constructor(private loginService : LoginService) { 
     if (loginService.isAdmin()) {
       this.isAdmin = true;
     } else {
@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
     this.loginService.logout();
     this.loginService.setLogged(false);
   }
+  
   ngOnInit() {
     this.user = sessionStorage.getItem("username");
   }
