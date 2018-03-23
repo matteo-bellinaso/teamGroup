@@ -14,15 +14,22 @@ export class UserListService {
     new User("topolino", "topolino",  false, 'fr@rgegre.it', 'carletto', 'baretto', new Date('09/06/1991'), "borgonovo", true)
   ];
 
-  checkUserProfile(id : string, pass : string){ //controlla mail o username
-  }
-
-getUserProfile(id : string, pass : string){ //cerca con ingresso
-  for(let user of this.users){
-    if(id == user.username && pass == user.password){
-      return user;
+  checkUserProfile(username : string, pass : string){ //controlla mail o username
+   let indice : number = 0;
+    for(let user of this.users){
+      if(username == user.username || username== user.email){
+        return this.getUserProfile(pass , indice);
+      }
+      indice = indice +1;
     }
   }
+
+
+getUserProfile( pass : string, indice : number){ 
+  let user = this.users[indice];
+    if( pass == user.password){
+      return user;
+    }
   return null;
 }
 

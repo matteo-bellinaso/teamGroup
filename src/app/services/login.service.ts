@@ -33,10 +33,8 @@ export class LoginService {
     if (username != null && username != null && password != null && password != null) {
 
       this.utente = this.userListService.checkUserProfile(username, password);
-
       sessionStorage.setItem("username", this.utente.username);
       this.setLogged(true);
-
       this.route.navigate(['/app-home']);
 
     } else {
