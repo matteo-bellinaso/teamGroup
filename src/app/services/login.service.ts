@@ -32,7 +32,7 @@ export class LoginService {
   login(username: string, password: string) {
     if (username != null && username != null && password != null && password != null) {
 
-      this.utente = this.userListService.getUserByUsername(username, password);
+      this.utente = this.userListService.checkUserProfile(username, password);
 
       sessionStorage.setItem("username", this.utente.username);
       this.setLogged(true);
