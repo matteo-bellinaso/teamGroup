@@ -1,21 +1,29 @@
-.ricera {
+#lista {
+    width: 800px;
+    margin: 0 auto;
     text-align: center;
-    width: 40%;
+}
+
+.ricerca {
+    text-align: center;
+    width: 100%;
+    float: left;
+    padding: 60px 0;
 }
 
 .barraRicerca {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .buttonRicerca {
     background-color: orange;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
 }
 
 .generi {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .cercatoGame {

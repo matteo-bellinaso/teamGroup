@@ -8,23 +8,24 @@
 </select>
     <input class="barraRicerca" type="text" [(ngModel)]="search" (keyup)="searchDelete($event)">
 </div>
-<ng-container *ngFor="let game of videoGames">
-    <div *ngIf="value=='Tutti' || game.genere.description == value" (click)="goToEdit(game)">
-        <div class="infoGame">
-            <div><img src="{{game?.imgUrl}}"></div>
-            <div>{{game?.title}} - {{game?.price | currency: 'EUR'}}</div>
-        </div>
-    </div>
-</ng-container>
 
-
-
-<ng-container *ngIf="searchedGame">
-    <ng-container *ngFor="let item of searchedGame">
-        <div class="cercatoGame" (click)="goToEdit(game)">
-            <button (click)="back()">Back to List</button>
-            <div><img src="{{item?.imgUrl}}"></div>
-            <div>{{item?.title}} - {{item?.price | currency: 'EUR'}}</div>
+<div id="lista">
+    <ng-container *ngFor="let game of videoGames">
+        <div *ngIf="value=='Tutti' || game.genere.description == value" (click)="goToEdit(game)">
+            <div class="infoGame" style="float:left;padding:30px;">
+                <div><img src="{{game?.imgUrl}}"></div>
+                <div style="padding:10px;">{{game?.title}} - {{game?.price | currency: 'EUR'}}</div>
+            </div>
         </div>
     </ng-container>
-</ng-container>
+
+    <ng-container *ngIf="searchedGame">
+        <ng-container *ngFor="let item of searchedGame">
+            <div class="cercatoGame" (click)="goToEdit(game)" style="float:left;padding:30px;">
+                <button (click)="back()">Back to List</button>
+                <div><img src="{{item?.imgUrl}}"></div>
+                <div style="padding:10px;">{{item?.title}} - {{item?.price | currency: 'EUR'}}</div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
