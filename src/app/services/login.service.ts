@@ -30,15 +30,14 @@ export class LoginService {
   }
 
   login(username: string, password: string) {
-    if (username != null && username != null && password != null && password != null) {
-
+    if (username != null && username != '' && password != null && password != '') {
       this.utente = this.userListService.checkUserProfile(username, password);
       sessionStorage.setItem("username", this.utente.username);
       this.setLogged(true);
       this.route.navigate(['/app-home']);
+    } else{
 
-    } else {
-      alert("username or password sbagliata");
+      alert("username or password wrong");
     }
   }
 

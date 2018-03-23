@@ -94,6 +94,7 @@ export class ListVideogameService {
           }
           return searchedGames;
       }
+      
       searchForEdit(search: string){
         let searchedGames : VideoGame;
        for(let item of this.games){
@@ -101,7 +102,7 @@ export class ListVideogameService {
              return item;
            }
          }
-         return null;
+         return searchedGames;
      }
 
 }
