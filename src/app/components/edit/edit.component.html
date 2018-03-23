@@ -1,34 +1,36 @@
-<div>
-    <input type="text" [(ngModel)]="searchBar"><button (click)="search()">Cerca</button>
+<div class="searchEdit">
+    <input class="inputEdit" type="text" [(ngModel)]="searchBar"><button class="editBtnSearch" (click)="search()">Cerca</button>
 
 </div>
-<div *ngIf="trovato">
+<div class="formEdit" *ngIf="trovato">
+
+
 
     <form (ngSubmit)="edit()" [formGroup]="editForm">
 
-        <label>Titolo</label>
-        <input type="text" formControlName="title">
+        <label class="label">Titolo: </label>
+        <input class="inputFormEdit" type="text" formControlName="title"> <br>
 
-        <label>Prezzo</label>
-        <input type="number" formControlName="price">
+        <label class="label">Prezzo: </label>
+        <input class="inputFormEdit" type="number" formControlName="price"><br>
 
 
-        <label>Genere</label>
-        <select formControlName="genere">
+        <label class="label">Genere: </label>
+        <select class="inputFormEdit" formControlName="genere">
            <option *ngFor="let genere of generes">{{genere.description}}</option>
       </select>
+        <br>
+
+        <label class="label">Data: </label>
+        <input class="inputFormEdit" type="date" formControlName="data"><br>
 
 
-        <label>Data</label>
-        <input type="date" formControlName="data">
+        <label class="label">Rating: </label>
+        <input class="inputFormEdit" type="number" formControlName="rating"><br>
 
 
-        <label>Rating</label>
-        <input type="number" formControlName="rating">
-
-
-        <button type="submit" [disabled]="editForm.status== 'INVALID'">Modifica</button>
-        <button type="button" (click)="resetForm()">Azzera</button>
+        <button class="btnSubmit" type="submit" [disabled]="editForm.status== 'INVALID'">Modifica</button>
+        <button class="btnReset" type="button" (click)="resetForm()">Azzera</button>
     </form>
 
 

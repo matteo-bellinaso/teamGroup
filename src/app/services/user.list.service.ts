@@ -29,8 +29,10 @@ getUserProfile( pass : string, indice : number){
   let user = this.users[indice];
     if( pass == user.password){
       return user;
+    }else{
+      alert("user or passoword wrong");
+      return null;
     }
-  return null;
 }
 
 
