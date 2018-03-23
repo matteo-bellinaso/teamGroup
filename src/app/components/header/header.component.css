@@ -16,12 +16,13 @@ li {
 }
 
 #navbar a {
-    padding: 20px;
+    padding: 16px;
     color: #fff;
 }
 
 #navbar a:hover {
     opacity: 0.85;
+    background-color: #ca8300;
 }
 
 .right {
