@@ -1,15 +1,27 @@
 <div class="detail" *ngIf="game">
+    <div class="container">
+        <div style="float:left;width:40%;">
+            <img class="img_detal" src="{{game.imgUrl}}">
+        </div>
 
-    <div class="text">{{game.title}}</div>
-    <img class="img_detal" src="{{game.imgUrl}}">
-    <div class="text">{{game.genere.description}}</div>
-    <div class="text">{{game.price}}</div>
-    <div class="text">{{game.title}}</div>
-    <div class="text">{{game.data | date: 'dd/MM/yyyy'}}</div>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos recusandae temporibus voluptas ipsum vel totam repellat eligendi eaque atque tenetur!
-    </p>
+        <div style="float:left;width:60%;padding:10px 0;">
+            <div class="text">
+                <h2 style="padding: 20px;
+                border-radius: 5px;background-color:#ff9133">{{game.title}}</h2>
+            </div>
 
+            <div style="background-color: #e6e6e6;
+            padding: 20px;
+            border-radius: 5px;">
+                <div class="text">{{game.genere.description}}</div>
+                <div class="text">{{game.price}}</div>
+                <div class="text">{{game.title}}</div>
+                <div class="text">{{game.data | date: 'dd/MM/yyyy'}}</div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos recusandae temporibus voluptas ipsum vel totam repellat eligendi eaque atque tenetur!
+                </p>
+            </div>
 
-    <div class="button" *ngIf="admin" (click)="goToEdit(game)">Edit
+            <div class="button" *ngIf="admin" (click)="goToEdit(game)">Edit</div>
+        </div>
     </div>
 </div>

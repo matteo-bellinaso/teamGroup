@@ -11,22 +11,24 @@ li {
 }
 
 #navbar {
+    width: 100%;
     height: 60px;
-    background-color: orange;
+    background-color: #000;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 15px;
+    position: fixed;
+    z-index: 999;
 }
 
 #navbar a {
-    padding: 30px;
+    padding: 30px 20px;
     color: #fff;
     font-size: 16px;
     line-height: 30px;
 }
 
 #navbar a:hover {
-    color: #d8d8d8;
+    color: #ff9133;
 }
 
 .right {
@@ -52,7 +54,7 @@ li {
 }
 
 #navbar .seleted {
-    background-color: #be7d03;
+    background-color: #ff9133;
 }
 
 #navbar .seleted:hover {

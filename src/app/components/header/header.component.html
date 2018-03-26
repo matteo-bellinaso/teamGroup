@@ -1,25 +1,28 @@
 <div id="navbar">
-    <nav>
+    <div class="container">
+        <nav>
 
-        <div class="logo">
-            <img src="../../../assets/img/origin.png" alt="">
-            <div class="user">Benevenuto {{user | uppercase}}</div>
-        </div>
+            <div class="logo">
+                <img src="../../../assets/img/origin.png" alt="">
+                <div class="user">Benevenuto {{user | uppercase}}</div>
+            </div>
 
-        <ul class="right">
-            <li>
-                <a routerLink="/app-home" routerLinkActive="seleted">HOME</a>
-            </li>
-            <li>
-                <a routerLink="/app-list" routerLinkActive="seleted">LIST</a>
-            </li>
+            <ul class="right">
+                <li>
+                    <a routerLink="/app-home" routerLinkActive="seleted">HOME</a>
+                </li>
+                <li>
+                    <a routerLink="/app-list" routerLinkActive="seleted">LIST</a>
+                </li>
 
-            <li *ngIf="isAdmin">
-                <a routerLink="/app-edit" routerLinkActive="seleted">EDIT</a>
-            </li>
-            <li>
-                <a (click)="logout()" routerLinkActive="seleted">LOGOUT</a>
-            </li>
-        </ul>
-    </nav>
+                <li *ngIf="isAdmin">
+                    <a routerLink="/app-edit" routerLinkActive="seleted">EDIT</a>
+                </li>
+                <li>
+                    <a (click)="logout()" routerLinkActive="seleted">LOGOUT</a>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
 </div>
