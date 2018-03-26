@@ -2,6 +2,10 @@
     height: 60px;
     background-color: #000;
     color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 h5 {
