@@ -5,15 +5,6 @@
     background-repeat: no-repeat;
     background-origin: content-box;
     background-size: 100%;
-    margin-top: -28px;
-}
-
-.textHomeImg {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 250%;
-    padding-top: 350px;
-    text-align: center;
 }
 
 .logo img {
@@ -21,19 +12,53 @@
     margin-left: 40%;
 }
 
-.text {
-    float: left;
-    margin-top: 60px;
+#lista {
+    width: 1200px;
+    margin: 0 auto;
     text-align: center;
-    width: 26%;
-    height: 500px;
-    margin-left: 2%;
-    margin-right: 2%;
-    padding: 15px;
-    background-color: orange;
-    color: white;
-    font-size: 30px;
+    padding: 50px 0;
+}
+
+#lista img {
+    width: 350px;
+    height: 350px;
+    margin: 50px 5px;
+    box-shadow: 4px 6px #adadad;
+}
+
+#lista img:hover {
+    transform: scale(1.06);
+}
+
+h2:after {
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: block;
+    content: "";
+    background: #FF9133;
+    height: 2px;
+    margin-top: 13px;
+}
+
+#optin {
+    padding: 50px 0 80px;
+    margin: 0 auto;
+    font-size: 25px;
+    background-color: #ececec;
+}
+
+#optin button {
+    width: 100px;
+    height: 40px;
     border-radius: 5px;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    margin-bottom: 100px;
+    border: 0px;
+    background-color: #ff9133;
+    color: #fff;
+    font-size: 16px;
+}
+
+#optin button:hover {
+    transform: scale(1.06);
 }

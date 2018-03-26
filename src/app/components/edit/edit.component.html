@@ -1,3 +1,8 @@
+<div class="descrizione" style="text-align:center;">
+    <span><img src="../../../assets/img/origin.png" alt="" style="width:100px;"></span>
+    <h2 style="font-weight: bold;font-size:50px;">Modifica le caratteristiche dei giochi:</h2>
+</div>
+
 <div class="searchEdit">
     <input class="inputEdit" type="text" [(ngModel)]="searchBar"><button class="editBtnSearch" (click)="search()">Cerca</button>
 
@@ -8,29 +13,37 @@
 
     <form (ngSubmit)="edit()" [formGroup]="editForm">
 
-        <label class="label">Titolo: </label>
-        <input class="inputFormEdit" type="text" formControlName="title"> <br>
+        <div class="form-options">
+            <label class="label">Titolo: </label><br>
+            <input class="inputFormEdit" type="text" formControlName="title"> <br>
+        </div>
 
-        <label class="label">Prezzo: </label>
-        <input class="inputFormEdit" type="number" formControlName="price"><br>
+        <div class="form-options">
+            <label class="label">Prezzo: </label><br>
+            <input class="inputFormEdit" type="number" formControlName="price"><br>
+        </div>
 
+        <div class="form-options">
+            <label class="label">Genere: </label><br>
+            <select class="inputFormEdit" formControlName="genere">
+           <option *ngFor="let genere of generes">{{genere.description}}</option></select>
+            <br>
+        </div>
 
-        <label class="label">Genere: </label>
-        <select class="inputFormEdit" formControlName="genere">
-           <option *ngFor="let genere of generes">{{genere.description}}</option>
-      </select>
-        <br>
+        <div class="form-options">
+            <label class="label">Data: </label><br>
+            <input class="inputFormEdit" type="date" formControlName="data"><br>
+        </div>
 
-        <label class="label">Data: </label>
-        <input class="inputFormEdit" type="date" formControlName="data"><br>
+        <div class="form-options">
+            <label class="label">Rating: </label><br>
+            <input class="inputFormEdit" type="number" formControlName="rating"><br>
+        </div>
 
-
-        <label class="label">Rating: </label>
-        <input class="inputFormEdit" type="number" formControlName="rating"><br>
-
-
-        <button class="btnSubmit" type="submit" [disabled]="editForm.status== 'INVALID'">Modifica</button>
-        <button class="btnReset" type="button" (click)="resetForm()">Azzera</button>
+        <div class="form-options">
+            <button class="btnSubmit" type="submit" [disabled]="editForm.status== 'INVALID'">Modifica</button>
+            <button class="btnReset" type="button" (click)="resetForm()">Azzera</button>
+        </div>
     </form>
 
 

@@ -19,6 +19,7 @@ import { UserListService } from './services/user.list.service';
 import { AuthguardService } from './services/authguard.service';
 import { AuthguardLoginService } from './services/login-authguard.service';
 import { CanDeactivateEditService } from './services/can-deactivate-edit.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CanDeactivateEditService } from './services/can-deactivate-edit.service
     LoginComponent,
     PageNotFoundComponent,
     EditComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule, 

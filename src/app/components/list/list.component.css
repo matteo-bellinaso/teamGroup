@@ -13,8 +13,8 @@
     text-align: center;
     width: 100%;
     float: left;
-    margin: 30px 0 80px;
-    background-color: orange;
+    margin: 150px 0 60px;
+    background-color: #ff9133;
     padding: 40px 0;
 }
 
@@ -34,7 +34,26 @@
 }
 
 .cercatoGame {
-    background-color: tomato;
+    margin: 20px 0;
+}
+
+.cercatoGame img {
+    border: 1px solid #cfcfcf;
+    -webkit-box-shadow: 4px 6px #adadad;
+    box-shadow: 4px 6px #adadad;
+}
+
+.cercatoGame button {
+    border: 0px;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: #ff9133;
+}
+
+.cercatoGame button:hover {
+    transform: scale(1.06);
 }
 
 .infoGame {
@@ -51,4 +70,21 @@
 
 .priceGame {
     padding: 10px;
+}
+
+h2:after {
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: block;
+    content: "";
+    background: #FF9133;
+    height: 2px;
+    margin-top: 13px;
+}
+
+.descrizione {
+    position: relative;
+    top: 135px;
 }

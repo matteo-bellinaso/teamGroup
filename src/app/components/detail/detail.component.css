@@ -1,28 +1,27 @@
 .detail {
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 70px;
-    background-color: orange;
-    text-align: center;
+    width: 50%;
     padding: 15px;
     border-radius: 5px;
+    position: relative;
+    top: 120px;
 }
 
 .detail img {
-    width: 40%;
+    width: 350px;
+    box-shadow: 3px 5px #bfbfbf;
 }
 
 .text {
-    margin-top: 3px;
+    margin: 10px 0;
     font-size: 18px;
-    margin-bottom: 3px;
 }
 
 .button {
-    margin-top: 15px;
+    margin-top: 50px;
     width: 20%;
     margin-left: 35%;
     padding: 15px;
     background-color: rgb(194, 102, 16);
     border-radius: 5px;
+    text-align: center;
 }

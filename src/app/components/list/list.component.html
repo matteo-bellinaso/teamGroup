@@ -1,3 +1,7 @@
+<div class="descrizione" style="text-align:center;">
+    <h2 style="font-weight: bold;font-size:50px;margin:0 0 50px 0;">Cerca tra migliaia di giochi:</h2>
+</div>
+
 <div class="ricerca">
     <select class="generi" [(ngModel)]="value" (ngModelChange)="clean($event)">
         <option>Tutti</option>
@@ -5,7 +9,7 @@
             <option>{{genereListService.getDescriptionById(genere?.id)}}</option>
         </ng-container>
 </select>
-    <input class="barraRicerca" type="text" [(ngModel)]="search" (keyup)="searchDelete($event)">
+    <input class="barraRicerca" type="text" [(ngModel)]="search" (keyup)="searchDelete($event)" placeholder="Es: Fifa">
 </div>
 
 <div id="lista">
@@ -21,9 +25,9 @@
     <ng-container *ngIf="searchedGame">
         <ng-container *ngFor="let item of searchedGame">
             <div class="cercatoGame" (click)="goToEdit(game)">
-                <button (click)="back()">Back to List</button>
-                <div><img src="{{item?.imgUrl}}"></div>
                 <div class="priceGame">{{item?.title}} <br> {{item?.price | currency: 'EUR'}}</div>
+                <div><img src="{{item?.imgUrl}}"></div>
+                <button (click)="back()">Back to List</button>
             </div>
         </ng-container>
     </ng-container>
